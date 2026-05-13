@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Mukhya Home Page -->
+  <url>
+    <loc>https://yourusername.github.io/veterans-app/index.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- About Us Page -->
+  <url>
+    <loc>https://yourusername.github.io/veterans-app/about.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Privacy Policy Page -->
+  <url>
+    <loc>https://yourusername.github.io/veterans-app/privacy.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Sitemap Page -->
+  <url>
+    <loc>https://yourusername.github.io/veterans-app/sitemap.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <priority>0.50</priority>
+  </url>
+
+</urlset>
