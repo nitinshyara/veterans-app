@@ -5,62 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fauji Unity - Digital Federation</title>
     <link rel="manifest" href="manifest.json">
-    <!-- Bootstrap CSS for Professional Look -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --army-green: #1b5e20; }
-        body { background-color: #f0f2f5; }
-        .navbar { background-color: var(--army-green) !important; color: white; }
-        .hero-section { background: var(--army-green); color: white; padding: 40px 20px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
-        .card { border: none; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: -30px; }
-        .btn-army { background-color: var(--army-green); color: white; border-radius: 25px; padding: 10px 30px; }
-        .btn-army:hover { background-color: #0e3d14; color: white; }
+        :root { --army-green: #1b5e20; --gold: #ffd700; }
+        body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar { background-color: var(--army-green) !important; border-bottom: 3px solid var(--gold); }
+        .hero-section { background: var(--army-green); color: white; padding: 60px 20px; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
+        .card-main { border: none; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-top: -40px; background: white; }
+        .btn-army { background-color: var(--army-green); color: white; border-radius: 30px; padding: 12px 35px; font-weight: bold; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-army:hover { background-color: #0e3d14; color: var(--gold); transform: translateY(-2px); }
+        .list-container { background: white; border-radius: 15px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        iframe { border: 1px solid #ddd; border-radius: 10px; width: 100%; height: 500px; }
+        .feature-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-dark shadow-sm">
     <div class="container text-center">
-        <span class="navbar-brand mb-0 h1 w-100">National Veterans Federation</span>
+        <span class="navbar-brand mb-0 h1 w-100">🇮🇳 National Veterans Federation</span>
     </div>
 </nav>
 
 <div class="hero-section text-center">
-    <h2>Jai Hind Veterans!</h2>
-    <p>Sabhi Sangthanon ko ek manch par lane ki pehal</p>
+    <h2 class="fw-bold">Jai Hind Veterans!</h2>
+    <p>Ek Bharat, Ek Sangthan - Sabhi ESM Sangthanon ka Digital Manch</p>
 </div>
 
 <div class="container mb-5">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card p-4 text-center">
-                <h5>Sangthan Registration</h5>
-                <p class="text-muted small">Apne district ke sangthan ko is digital list mein jodne ke liye niche click karein.</p>
+        <div class="col-md-9">
+            <!-- Registration Card -->
+            <div class="card card-main p-4 text-center">
+                <h4 class="fw-bold">Sangthan Registration</h4>
+                <p class="text-muted">Kya aapka sangthan hamari National Directory mein juda hai? Agar nahi, toh abhi jodein.</p>
                 
-                <https://forms.gle/PEXAhNRfkxENhroz7>
-                <a href="APKA_GOOGLE_FORM_LINK_YAHAN" class="btn btn-army btn-lg mb-3">Abhi Register Karein</a>
+                <!-- Aapka Sahi Google Form Link -->
+                <a href="https://forms.gle/PEXAhNRfkxENhroz7" target="_blank" class="btn btn-army btn-lg my-3">
+                    📝 Abhi Register Karein
+                </a>
                 
-                <hr>
-                
-                <h5>Yahan Kya Milega?</h5>
-                <div class="row mt-3">
-                    <div class="col-4"><strong>📁</strong><br><small>Docs</small></div>
-                    <div class="col-4"><strong>📞</strong><br><small>Help</small></div>
-                    <div class="col-4"><strong>🇮🇳</strong><br><small>Unity</small></div>
+                <div class="row mt-4">
+                    <div class="col-4 border-end">
+                        <span class="feature-icon">📁</span>
+                        <small class="fw-bold">Imp Docs</small>
+                    </div>
+                    <div class="col-4 border-end">
+                        <span class="feature-icon">📞</span>
+                        <small class="fw-bold">Help Desk</small>
+                    </div>
+                    <div class="col-4">
+                        <span class="feature-icon">🇮🇳</span>
+                        <small class="fw-bold">Unity</small>
+                    </div>
                 </div>
+            </div>
+
+            <!-- List Section -->
+            <div class="list-container mt-5">
+                <h4 class="text-center fw-bold mb-3" style="color: var(--army-green);">Registered Sangthan ki List</h4>
+                <div class="table-responsive text-center">
+                    <!-- Published Google Sheet Iframe -->
+                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZtnfxAeFwenukHyuU11GBqeqzUnKmA-65UNN-Zk_RqXb4MhtiSrbUWOOH9tupOwK4hTkiOQ126XuU/pubhtml?widget=true&amp;headers=false"></iframe>
+                </div>
+                <p class="text-center text-muted mt-2 small">*Naye registration har 24 ghante mein update hote hain.</p>
             </div>
         </div>
     </div>
 </div>
-<div class="container mt-4">
-    <h3 class="text-center">Registered Sangthan ki List</h3>
-    <div class="table-responsive">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZtnfxAeFwenukHyuU11GBqeqzUnKmA-65UNN-Zk_RqXb4MhtiSrbUWOOH9tupOwK4hTkiOQ126XuU/pubhtml?widget=true&amp;headers=false"></iframe>
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1v.../pubhtml?widget=true&amp;headers=false" width="100%" height="500"></iframe>
-    </div>
-</div>
-<footer class="text-center mt-5 text-muted small">
-    &copy; 2026 FaujiFire - Veterans Empowerment
+
+<footer class="text-center py-4 text-muted border-top bg-white">
+    <p class="mb-0">&copy; 2026 <strong>FaujiFire</strong> - Veterans Empowerment</p>
+    <small>Banaya gaya hai desh ke veeron ke liye</small>
 </footer>
 
 </body>
