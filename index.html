@@ -3,82 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fauji Unity - Digital Federation</title>
-    <link rel="manifest" href="manifest.json">
-    <!-- Bootstrap CSS -->
+    <title>National Veterans Digital Federation | Ek Bharat, Ek Sankalp</title>
+    
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1050874559330834" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <style>
-        :root { --army-green: #1b5e20; --gold: #ffd700; }
-        body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .navbar { background-color: var(--army-green) !important; border-bottom: 3px solid var(--gold); }
-        .hero-section { background: var(--army-green); color: white; padding: 60px 20px; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
-        .card-main { border: none; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-top: -40px; background: white; }
-        .btn-army { background-color: var(--army-green); color: white; border-radius: 30px; padding: 12px 35px; font-weight: bold; text-decoration: none; display: inline-block; transition: 0.3s; }
-        .btn-army:hover { background-color: #0e3d14; color: var(--gold); transform: translateY(-2px); }
-        .list-container { background: white; border-radius: 15px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        iframe { border: 1px solid #ddd; border-radius: 10px; width: 100%; height: 500px; }
-        .feature-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
+        :root { --army-green: #1b5e20; --gold: #ffd700; --dark-green: #0e3d14; }
+        body { background-color: #f4f7f6; font-family: 'Roboto', sans-serif; }
+        
+        /* Navigation */
+        .navbar { background-color: var(--army-green); border-bottom: 4px solid var(--gold); }
+        .nav-link { color: white !important; font-weight: 500; }
+        
+        /* Hero & Sections */
+        .hero { background: linear-gradient(rgba(27,94,32,0.9), rgba(14,61,20,0.9)), url('https://www.transparenttextures.com/patterns/camo.png'); color: white; padding: 60px 0; }
+        .section-title { border-left: 5px solid var(--army-green); padding-left: 15px; margin-bottom: 30px; color: var(--dark-green); font-weight: bold; }
+        
+        /* Registration Cards */
+        .reg-card { border: none; border-radius: 15px; transition: 0.3s; height: 100%; border-top: 5px solid var(--gold); }
+        .reg-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        /* Floating Donation Button */
+        .btn-donate { position: fixed; bottom: 20px; right: 20px; background: #d32f2f; color: white; border-radius: 50px; padding: 15px 25px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; }
+        .btn-donate:hover { background: #b71c1c; color: white; }
+
+        /* Blog Section */
+        .blog-post { background: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; border-left: 3px solid var(--army-green); }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-dark shadow-sm">
-    <div class="container text-center">
-        <span class="navbar-brand mb-0 h1 w-100">🇮🇳 National Veterans Federation</span>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">🇮🇳 VETERANS FEDERATION</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto text-uppercase small">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
+                <li class="nav-item"><a class="nav-link" href="#directory">Directory</a></li>
+                <li class="nav-item"><a class="nav-link" href="#grievance">Grievance</a></li>
+                <li class="nav-item"><a class="nav-link" href="#welfare">Welfare Hub</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
-<div class="hero-section text-center">
-    <h2 class="fw-bold">Jai Hind Veterans!</h2>
-    <p>Ek Bharat, Ek Sangthan - Sabhi ESM Sangthanon ka Digital Manch</p>
-</div>
+<!-- Hero Section -->
+<section class="hero text-center" id="home">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Veterans Empowerment Portal</h1>
+        <p class="lead">Village Level se National Level tak, Har Fauji ki Awaaz.</p>
+        <div class="mt-4">
+            <a href="#registration" class="btn btn-warning btn-lg px-5 fw-bold">Shuru Karein</a>
+        </div>
+    </div>
+</section>
 
-<div class="container mb-5">
-    <div class="row justify-content-center">
-        <div class="col-md-9">
-            <!-- Registration Card -->
-            <div class="card card-main p-4 text-center">
-                <h4 class="fw-bold">Sangthan Registration</h4>
-                <p class="text-muted">Kya aapka sangthan hamari National Directory mein juda hai? Agar nahi, toh abhi jodein.</p>
-                
-                <!-- Aapka Sahi Google Form Link -->
-                <a href="https://forms.gle/PEXAhNRfkxENhroz7" target="_blank" class="btn btn-army btn-lg my-3">
-                    📝 Abhi Register Karein
-                </a>
-                
-                <div class="row mt-4">
-                    <div class="col-4 border-end">
-                        <span class="feature-icon">📁</span>
-                        <small class="fw-bold">Imp Docs</small>
-                    </div>
-                    <div class="col-4 border-end">
-                        <span class="feature-icon">📞</span>
-                        <small class="fw-bold">Help Desk</small>
-                    </div>
-                    <div class="col-4">
-                        <span class="feature-icon">🇮🇳</span>
-                        <small class="fw-bold">Unity</small>
-                    </div>
-                </div>
+<!-- Registration Center (Multi-Level) -->
+<section class="container my-5" id="registration">
+    <h3 class="section-title">Registration Center (Chunav Karein)</h3>
+    <div class="row g-4 text-center">
+        <!-- Veteran Member -->
+        <div class="col-md-4">
+            <div class="card reg-card p-4">
+                <i class="bi bi-person-badge display-5 text-success"></i>
+                <h5 class="mt-3">Common Veteran</h5>
+                <p class="small text-muted">Verification via PPO/ID Card</p>
+                <a href="https://forms.gle/PEXAhNRfkxENhroz7" class="btn btn-outline-success">Register</a>
             </div>
-
-            <!-- List Section -->
-            <div class="list-container mt-5">
-                <h4 class="text-center fw-bold mb-3" style="color: var(--army-green);">Registered Sangthan ki List</h4>
-                <div class="table-responsive text-center">
-                    <!-- Published Google Sheet Iframe -->
-                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZtnfxAeFwenukHyuU11GBqeqzUnKmA-65UNN-Zk_RqXb4MhtiSrbUWOOH9tupOwK4hTkiOQ126XuU/pubhtml?widget=true&amp;headers=false"></iframe>
-                </div>
-                <p class="text-center text-muted mt-2 small">*Naye registration har 24 ghante mein update hote hain.</p>
+        </div>
+        <!-- Village/Pratinidhi -->
+        <div class="col-md-4">
+            <div class="card reg-card p-4">
+                <i class="bi bi-geo-alt display-5 text-primary"></i>
+                <h5 class="mt-3">Village Representative</h5>
+                <p class="small text-muted">Gaon ke pratinidhi ke liye</p>
+                <a href="#" class="btn btn-outline-primary">Apply Now</a>
+            </div>
+        </div>
+        <!-- Leadership -->
+        <div class="col-md-4">
+            <div class="card reg-card p-4 text-white bg-dark">
+                <i class="bi bi-trophy display-5 text-warning"></i>
+                <h5 class="mt-3">Leaders/President</h5>
+                <p class="small text-light">Dist/State/National Level</p>
+                <a href="#" class="btn btn-warning">Apply for Post</a>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<footer class="text-center py-4 text-muted border-top bg-white">
-    <p class="mb-0">&copy; 2026 <strong>FaujiFire</strong> - Veterans Empowerment</p>
-    <small>Banaya gaya hai desh ke veeron ke liye</small>
+<!-- Grievance & Escalation System -->
+<section class="bg-light py-5" id="grievance">
+    <div class="container">
+        <h3 class="section-title">Grievance Redressal (Samasya Nivaran)</h3>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="p-4 bg-white shadow-sm rounded">
+                    <h5>Apni Samasya Darj Karein</h5>
+                    <p class="small">System auto-escalate karega: Village ➔ District ➔ State ➔ National</p>
+                    <form>
+                        <input type="text" class="form-control mb-2" placeholder="Veteran ID / Name">
+                        <select class="form-select mb-2">
+                            <option>Samasya ka Prakar (Pension/Medical/Legal)</option>
+                        </select>
+                        <textarea class="form-control mb-2" placeholder="Samasya ka vivaran..."></textarea>
+                        <button class="btn btn-danger w-100">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="https://via.placeholder.com/400x250?text=Hierarchy+Dashboard+View" class="img-fluid rounded" alt="Escalation System">
+                <p class="mt-2 small text-muted">President Dashboard par sabhi pening cases dikhenge.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Welfare Hub (Blogs/SPARSH) -->
+<section class="container my-5" id="welfare">
+    <h3 class="section-title">Welfare & Knowledge Hub</h3>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="blog-post shadow-sm">
+                <span class="badge bg-success">SPARSH Portal</span>
+                <h5 class="mt-2">SPARSH Login aur Profile Update kaise karein?</h5>
+                <p class="small">Agar aapki pension migrate ho gayi hai, toh ye 5 steps follow karein...</p>
+                <a href="#" class="text-decoration-none">Read More →</a>
+            </div>
+            <div class="blog-post shadow-sm">
+                <span class="badge bg-primary">Schemes</span>
+                <h5 class="mt-2">New Medical Schemes for ESM Families 2026</h5>
+                <p class="small">Sarkar ne naye hospitals ko ECHS panel mein joda hai. Puri list yahan dekhein.</p>
+                <a href="#" class="text-decoration-none">Read More →</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 border rounded bg-white">
+                <h6>LATEST NEWS & CIRCULARS</h6>
+                <marquee direction="up" scrollamount="2" style="height: 150px;">
+                    <p class="small text-danger">• OROP Table 3 Latest Update...</p>
+                    <p class="small text-primary">• Pension Adalat in Gandhinagar...</p>
+                    <p class="small text-success">• Digital Life Certificate Deadline...</p>
+                </marquee>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Donation Link -->
+<a href="#donate" class="btn-donate"><i class="bi bi-heart-fill me-2"></i>Donate Now</a>
+
+<!-- Footer / AdSense Compliant Pages -->
+<footer class="bg-dark text-white pt-5 pb-3 mt-5" id="about">
+    <div class="container text-center">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <h6>ABOUT US</h6>
+                <p class="x-small" style="font-size: 12px;">Hum desh ke sabhi veterans ko ek majboot digital platform pradan karte hain.</p>
+            </div>
+            <div class="col-md-4">
+                <h6>QUICK LINKS</h6>
+                <ul class="list-unstyled x-small" style="font-size: 12px;">
+                    <li><a href="#" class="text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="text-white">Terms of Service</a></li>
+                    <li><a href="#" class="text-white">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-white">
+                <h6>CONTACT</h6>
+                <p class="small">Email: info@faujifire.com<br>Location: Gandhinagar, Gujarat</p>
+            </div>
+        </div>
+        <hr>
+        <p class="small">&copy; 2026 FaujiFire | Serving Those Who Served</p>
+    </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
