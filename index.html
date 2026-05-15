@@ -3,246 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Veterans Digital Federation | Official Portal</title>
+    <title>ESM Help - Veterans Jobs, SPARSH & Welfare Portal</title>
     
-    <!-- Google AdSense -->
+    <!-- AdSense Code (Aapka Client ID) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1050874559330834" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <style>
-        :root { --army-green: #1b5e20; --gold: #ffd700; --alert-red: #d32f2f; }
-        body { background-color: #f8f9fa; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
+        :root { --army-green: #1b5e20; --gold: #ffd700; --dark-green: #0e3d14; }
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
         
-        /* Language Selector Styling */
-        #google_translate_element {
-            background: #fff;
-            padding: 5px;
-            border-bottom: 1px solid #ddd;
-            text-align: right;
-        }
-
-        /* Under Construction Notice */
-        .work-in-progress { background-color: var(--gold); color: #000; padding: 10px; font-weight: bold; font-size: 14px; text-align: center; border-bottom: 1px solid #ccc; }
+        .navbar { background-color: var(--army-green); border-bottom: 4px solid var(--gold); }
+        .hero-banner { background: var(--army-green); color: white; padding: 40px 0; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
         
-        .navbar { background-color: var(--army-green); border-bottom: 3px solid var(--gold); }
-        .hero { background: linear-gradient(rgba(27,94,32,0.85), rgba(14,61,20,0.85)), url('https://www.transparenttextures.com/patterns/camo.png'); color: white; padding: 80px 0; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
-        .section-title { border-left: 5px solid var(--army-green); padding-left: 15px; margin-bottom: 30px; font-weight: bold; color: var(--army-green); }
-        .btn-army { background-color: var(--army-green); color: white; border-radius: 30px; font-weight: bold; text-decoration: none; }
-        .btn-army:hover { background-color: #0e3d14; color: var(--gold); }
-        .btn-donate { position: fixed; bottom: 20px; right: 20px; background: var(--alert-red); color: white; border-radius: 50px; padding: 12px 25px; font-weight: bold; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); text-decoration: none; }
+        /* AdSense Placeholder Styling */
+        .ad-space { background: #eee; border: 1px dashed #bbb; text-align: center; padding: 10px; margin: 20px 0; min-height: 90px; color: #888; font-size: 12px; }
         
-        /* Responsive Iframe */
-        .iframe-container { position: relative; overflow: hidden; width: 100%; padding-top: 56.25%; /* 16:9 Aspect Ratio */ }
-        .iframe-container iframe { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; border-radius: 10px; }
+        .news-card { border: none; border-radius: 10px; transition: 0.3s; height: 100%; border-left: 5px solid var(--army-green); }
+        .news-card:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .job-tag { background: #e8f5e9; color: #2e7d32; font-weight: bold; padding: 2px 10px; border-radius: 5px; font-size: 12px; }
         
-        footer a { color: var(--gold); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        #google_translate_element { padding: 5px; text-align: right; background: #fff; }
     </style>
 </head>
 <body>
 
-<!-- Language Selector Widget -->
 <div id="google_translate_element"></div>
 
-<!-- Warning/Notice Banner -->
-<div class="work-in-progress">
-    <i class="bi bi-exclamation-triangle-fill"></i> SANKET: Yeh portal abhi nirman adheen (Under Construction) hai. Kuch vikalp abhi upalabdha nahi ho sakte.
-</div>
-
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">🇮🇳 VETERANS FEDERATION</a>
+        <a class="navbar-brand fw-bold" href="#">ESM HELP</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto small text-uppercase">
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
-                <li class="nav-item"><a class="nav-link" href="#grievance">Grievance</a></li>
-                <li class="nav-item"><a class="nav-link" href="#welfare">Welfare Hub</a></li>
+            <ul class="navbar-nav ms-auto text-uppercase small">
+                <li class="nav-item"><a class="nav-link" href="#jobs">Jobs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pension">Pension/SPARSH</a></li>
+                <li class="nav-item"><a class="nav-link" href="#welfare">Welfare</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero text-center" id="home">
-    <div class="container">
-        <h1 class="display-4 fw-bold">Veterans Empowerment Portal</h1>
-        <p class="lead">Village Level se National Level tak, Har Fauji ki Majboot Awaaz.</p>
-        <a href="#registration" class="btn btn-warning btn-lg mt-3 fw-bold shadow">JOIN THE FEDERATION</a>
-    </div>
-</section>
-
-<!-- Registration Center -->
-<section class="container my-5" id="registration">
-    <h3 class="section-title">Registration Gateway</h3>
-    <div class="row g-4 text-center">
-        <div class="col-md-4">
-            <div class="card p-4 h-100 shadow-sm border-0">
-                <i class="bi bi-person-check display-5 text-success"></i>
-                <h5 class="mt-3">Veteran Registration</h5>
-                <p class="small text-muted">Aam Veteran sadasya banein (PPO Verification anivarya hai)</p>
-                <a href="https://forms.gle/PEXAhNRfkxENhroz7" target="_blank" class="btn btn-outline-success">Register Now</a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card p-4 h-100 shadow-sm border-0">
-                <i class="bi bi-geo-alt display-5 text-primary"></i>
-                <h5 class="mt-3">Village/Dist Representative</h5>
-                <p class="small text-muted">Panchayat aur Zila star ke pratinidhi sadasya</p>
-                <a href="#" class="btn btn-outline-primary">Apply for Post</a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card p-4 h-100 shadow-sm border-0 bg-dark text-white">
-                <i class="bi bi-shield-check display-5 text-warning"></i>
-                <h5 class="mt-3 text-white">President/State Leadership</h5>
-                <p class="small text-light">Sangthan aur Rajya star ke netaon ke liye portal</p>
-                <a href="#" class="btn btn-warning">Leadership Login</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Grievance & Escalation System -->
-<section class="bg-light py-5" id="grievance">
-    <div class="container">
-        <h3 class="section-title">Grievance Redressal & Escalation</h3>
-        <div class="row">
-            <div class="col-md-7">
-                <div class="bg-white p-4 shadow-sm rounded">
-                    <h5>Samasya Darj Karein (Complaint Box)</h5>
-                    <p class="text-muted small">Auto-Escalation: 3 din (Village) ➔ 7 din (Dist) ➔ 15 din (National)</p>
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Aapka PPO Number (Verification ke liye)</label>
-                            <input type="text" class="form-control" placeholder="PPO Number dalein">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Samasya ka Star (Level)</label>
-                            <select class="form-select">
-                                <option>Village Level (Initial)</option>
-                                <option>District Level</option>
-                                <option>State Level</option>
-                            </select>
-                        </div>
-                        <textarea class="form-control mb-3" rows="3" placeholder="Samasya ka poora vivaran likhein..."></textarea>
-                        <button type="button" class="btn btn-army w-100 shadow-sm">Submit to System</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="p-4 border rounded bg-white shadow-sm h-100 text-center">
-                    <i class="bi bi-graph-up-arrow display-1 text-danger"></i>
-                    <h5 class="mt-3">Tracking Dashboard</h5>
-                    <p class="small text-muted">Aapki file ka status automatic track hota hai.</p>
-                    <div class="progress mt-4" style="height: 20px;">
-                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 25%">Village Level</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Directory Display (Google Sheet Integration) -->
-<section class="container my-5" id="directory">
-    <h3 class="section-title">National Directory (Registered Sangthan)</h3>
-    <div class="iframe-container shadow-sm rounded border">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZtnfxAeFwenukHyuU11GBqeqzUnKmA-65UNN-Zk_RqXb4MhtiSrbUWOOH9tupOwK4hTkiOQ126XuU/pubhtml?widget=true&amp;headers=false"></iframe>
-    </div>
-</section>
-
-<!-- Welfare Hub -->
-<section class="bg-white py-5" id="welfare">
-    <div class="container">
-        <h3 class="section-title">Welfare Hub (Blog & Articles)</h3>
-        <div class="row g-4">
-            <div class="col-md-8">
-                <div class="p-3 border-start border-success border-4 mb-3 shadow-sm rounded bg-light">
-                    <h6>SPARSH Migration Process 2026</h6>
-                    <p class="small text-muted">Naye PPO aur login se judi puri jankari yahan padhein...</p>
-                    <a href="#" class="small fw-bold">Read More →</a>
-                </div>
-                <div class="p-3 border-start border-primary border-4 mb-3 shadow-sm rounded bg-light">
-                    <h6>ECHS New Empanelled Hospitals</h6>
-                    <p class="small text-muted">Gujarat aur anya rajyon mein naye jude hospitals ki list...</p>
-                    <a href="#" class="small fw-bold">Read More →</a>
-                <div class="p-3 border rounded shadow-sm bg-light mt-3">
-    <h6 class="fw-bold text-danger"><i class="bi bi-youtube me-2"></i>VIDEO GUIDE</h6>
-    <p class="small">SPARSH aur Pension ki sahi jankari ke liye hamare channel <strong>FJFire</strong> ko subscribe karein.</p>
-    <a href="https://www.youtube.com/@FJFire" target="_blank" class="btn btn-danger btn-sm w-100">
-        <i class="bi bi-play-circle-fill me-1"></i> YouTube Channel Par Jayein
-    </a>
+<!-- TOP AD SPACE -->
+<div class="container">
+    <div class="ad-space">Google AdSense - Horizontal Banner Placeholder</div>
 </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 border rounded shadow-sm bg-army-light">
-                    <h6 class="fw-bold"><i class="bi bi-megaphone-fill me-2"></i>LATEST CIRCULARS</h6>
-                    <marquee direction="up" scrollamount="2" style="height: 120px;">
-                        <p class="small text-danger">• OROP-3 Revision Table Update</p>
-                        <p class="small text-primary">• Digital Life Certificate Deadline</p>
-                        <p class="small text-success">• Welfare Grant for Daughter's Marriage</p>
-                    </marquee>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white pt-5 pb-3" id="contact">
-    <div class="container text-center text-md-start">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <h5 class="text-warning fw-bold">CONTACT DETAILS</h5>
-                <p class="small mb-1"><i class="bi bi-geo-alt-fill me-2"></i> Gandhinagar, Gujarat</p>
-                <p class="small mb-1"><i class="bi bi-envelope-fill me-2"></i> nitinshyara@gmail.com</p>
-                <p class="small"><i class="bi bi-telephone-fill me-2"></i> +91 8901422296</p>
+<header class="hero-banner text-center">
+    <div class="container">
+        <h1 class="fw-bold">Veterans Jobs & Resource Portal</h1>
+        <p>Ex-Servicemen ke liye sabse satik aur vishwasniya jankari</p>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div class="row">
+        <!-- Main Content Area -->
+        <div class="col-md-8">
+            <h3 class="mb-4 fw-bold text-success border-bottom pb-2">Latest ESM Jobs & News</h3>
+            
+            <!-- Job Card 1 -->
+            <div class="card news-card mb-4 p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="job-tag">Defence Quota</span>
+                    <small class="text-muted">14 May 2026</small>
+                </div>
+                <h5><a href="#" class="text-decoration-none text-dark">Bank of Baroda - Armed Guard Recruitment for ESM</a></h5>
+                <p class="small text-muted">Bank of Baroda ne veterans ke liye naya notification jari kiya hai. Qualification aur apply karne ka tarika yahan dekhein.</p>
+                <a href="#" class="btn btn-sm btn-outline-success col-md-3">Puri Jankari</a>
             </div>
-            <div class="col-md-4 mb-4 text-center">
-                <h5 class="text-warning fw-bold">IMPORTANT PAGES</h5>
+
+            <!-- Blog/News Card 2 -->
+            <div class="card news-card mb-4 p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="job-tag" style="background:#e3f2fd; color:#1565c0;">Pension Update</span>
+                    <small class="text-muted">13 May 2026</small>
+                </div>
+                <h5><a href="#" class="text-decoration-none text-dark">SPARSH: Digital Life Certificate Submission Guide</a></h5>
+                <p class="small text-muted">Life certificate submit karne mein aa rahi dikkaton ka samadhan aur naye apps ke bare mein jankari.</p>
+            </div>
+
+            <!-- MID CONTENT AD -->
+            <div class="ad-space">AdSense - In-Feed Ad Placeholder</div>
+        </div>
+
+        <!-- Sidebar Area -->
+        <div class="col-md-4">
+            <div class="p-4 bg-white border rounded shadow-sm mb-4">
+                <h6 class="fw-bold"><i class="bi bi-youtube text-danger me-2"></i>FJFire - Latest Video</h6>
+                <!-- YouTube Thumbnail/Link -->
+                <a href="https://www.youtube.com/@FJFire" target="_blank">
+                    <img src="https://via.placeholder.com/300x160?text=Latest+Video+Thumbnail" class="img-fluid rounded mb-2" alt="YouTube Video">
+                </a>
+                <p class="small">Hamara naya video dekhein aur channel ko subscribe karein.</p>
+            </div>
+
+            <div class="p-4 bg-white border rounded shadow-sm">
+                <h6 class="fw-bold text-success">IMP LINKS</h6>
                 <ul class="list-unstyled small">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li class="mb-2"><i class="bi bi-file-earmark-pdf me-2"></i><a href="#">OROP Table 2026 PDF</a></li>
+                    <li class="mb-2"><i class="bi bi-hospital me-2"></i><a href="#">ECHS Hospital List</a></li>
+                    <li class="mb-2"><i class="bi bi-cart4 me-2"></i><a href="#">CSD Online Portal</a></li>
                 </ul>
             </div>
-           <div class="col-md-4 mb-4 text-center">
-    <h5 class="text-warning fw-bold">JOIN COMMUNITY</h5>
-    <div class="d-flex justify-content-center gap-4">
-        <!-- YouTube Link for @FJFire -->
-        <a href="https://www.youtube.com/@FJFire" target="_blank" class="display-6" title="YouTube">
-            <i class="bi bi-youtube text-danger"></i>
-        </a>
-        
-        <!-- WhatsApp Link -->
-        <a href="https://wa.me/918901422296" target="_blank" class="display-6" title="WhatsApp">
-            <i class="bi bi-whatsapp text-success"></i>
-        </a>
-    </div>
-</div>
-            </div>
+            
+            <!-- SIDEBAR AD -->
+            <div class="ad-space" style="height:250px;">AdSense - Square Ad</div>
         </div>
-        <hr class="bg-warning">
-        <div class="text-center small">
-            &copy; 2026 FaujiFire | <strong>Serving Veterans Nationwide</strong> 
+    </div>
+</main>
+
+<footer class="bg-dark text-white py-5" id="contact">
+    <div class="container text-center">
+        <p class="mb-1"><strong>esmhelp.com</strong>[cite: 1]</p>
+        <p class="small text-muted">Serving those who served India</p>
+        <div class="mt-3">
+            <a href="about.html" class="text-warning text-decoration-none mx-2">About</a>
+            <a href="privacy.html" class="text-warning text-decoration-none mx-2">Privacy</a>
+            <a href="sitemap.html" class="text-warning text-decoration-none mx-2">Sitemap</a>
         </div>
     </div>
 </footer>
 
-<a href="#donate" class="btn-donate shadow-lg"><i class="bi bi-heart-fill me-2"></i>SUPPORT (DONATE)</a>
-
-<!-- Google Translate Scripts -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
