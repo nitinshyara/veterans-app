@@ -11,65 +11,68 @@
     <!-- Google Fonts, Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root { --army-green: #1b5e20; --gold: #ffd700; --dark-bg: #1a1a1a; --light-gray: #f8f9fa; }
-        body { font-family: 'Inter', sans-serif; background-color: #f4f6f9; color: #333; }
+        :root { --army-green: #1b5e20; --gold: #ffd700; --dark-bg: #1a1a1a; --card-border: #eef2f6; }
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fc; color: #2d3748; overflow-x: hidden; }
         
         /* Top Utility Bar */
-        .top-bar { background: var(--dark-bg); color: #fff; padding: 6px 0; font-size: 13px; }
-        #google_translate_element select { background: #333; color: #fff; border: 1px solid #444; border-radius: 4px; padding: 2px; }
+        .top-bar { background: var(--dark-bg); color: #fff; padding: 8px 0; font-size: 13px; font-weight: 500; }
+        #google_translate_element select { background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 6px; padding: 3px 8px; font-size: 12px; }
         
         /* Breaking News Ticker */
-        .ticker-wrapper { background: #fff; border-bottom: 2px solid #e0e0e0; padding: 10px 0; }
-        .ticker-title { background: #d32f2f; color: white; padding: 4px 12px; font-weight: bold; border-radius: 4px; font-size: 13px; }
+        .ticker-wrapper { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 12px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .ticker-title { background: #dc2626; color: white; padding: 5px 14px; font-weight: 700; border-radius: 6px; font-size: 12px; letter-spacing: 0.5px; }
         
         /* Navbar Customization */
-        .navbar { background-color: var(--army-green) !important; border-bottom: 5px solid var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .navbar-brand { font-weight: 700; letter-spacing: 1px; }
-        .nav-link { font-weight: 600; text-transform: uppercase; font-size: 14px; padding: 10px 15px !important; transition: 0.3s; }
-        .nav-link:hover, .nav-item.active .nav-link { color: var(--gold) !important; }
+        .navbar { background-color: var(--army-green) !important; border-bottom: 4px solid var(--gold); box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 15px 0; }
+        .navbar-brand { font-weight: 700; letter-spacing: 0.5px; font-size: 1.6rem; }
+        .nav-link { font-weight: 600; text-transform: uppercase; font-size: 13px; padding: 8px 16px !important; letter-spacing: 0.3px; transition: 0.2s all; }
+        .nav-link:hover { color: var(--gold) !important; opacity: 0.9; }
 
         /* Premium Hero Section */
-        .hero-section { background: linear-gradient(135deg, rgba(27,94,32,0.95) 0%, rgba(14,61,20,0.9) 100%), url('https://www.transparenttextures.com/patterns/camo.png'); color: white; padding: 70px 0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .hero-section { background: linear-gradient(135deg, rgba(20,70,24,0.96) 0%, rgba(10,45,15,0.93) 100%), url('https://www.transparenttextures.com/patterns/camo.png'); color: white; padding: 80px 0; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.04); }
+        .hero-section h1 { font-size: 2.8rem; letter-spacing: -0.5px; }
         
         /* Quick Action Grid Section */
-        .service-card { background: white; border: none; border-radius: 16px; padding: 25px 20px; transition: 0.3s all ease; text-align: center; border-top: 5px solid var(--army-green); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-top-color: var(--gold); }
-        .service-icon-box { width: 65px; height: 65px; background: #e8f5e9; color: var(--army-green); display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: 0 auto 15px; font-size: 1.8rem; }
+        .service-card { background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px 20px; transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); text-align: center; border-top: 4px solid var(--army-green); position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.01); }
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(27,94,32,0.1); border-top-color: var(--gold); }
+        .service-icon-box { width: 60px; height: 60px; background: #e8f5e9; color: var(--army-green); display: flex; align-items: center; justify-content: center; border-radius: 14px; margin: 0 auto 18px; font-size: 1.6rem; transition: 0.3s; }
+        .service-card:hover .service-icon-box { background: var(--army-green); color: white; }
         
         /* Ad Placement Blocks */
-        .ad-placeholder { background: #eaedf1; border: 2px dashed #bdc6cf; border-radius: 8px; text-align: center; padding: 15px; color: #7f8c8d; font-size: 11px; font-weight: 600; letter-spacing: 1px; margin: 20px 0; text-transform: uppercase; }
+        .ad-placeholder { background: #edf2f7; border: 2px dashed #cbd5e1; border-radius: 12px; text-align: center; padding: 18px; color: #64748b; font-size: 11px; font-weight: 700; letter-spacing: 1px; margin: 25px 0; text-transform: uppercase; }
         
         /* Table Layout Enhancements */
-        .panel-box { background: white; border-radius: 16px; padding: 25px; border: 1px solid #eef2f5; box-shadow: 0 4px 10px rgba(0,0,0,0.01); }
+        .panel-box { background: white; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.015); }
         .table { margin-bottom: 0; }
-        .table thead { background-color: #f1f3f5; }
-        .table th { font-weight: 600; text-transform: uppercase; font-size: 12px; color: #666; padding: 12px; }
-        .table td { padding: 14px 12px; vertical-align: middle; }
+        .table-responsive { border-radius: 12px; border: 1px solid #edf2f7; overflow: hidden; }
+        .table thead { background-color: #f8fafc; }
+        .table th { font-weight: 600; text-transform: uppercase; font-size: 11px; color: #475569; padding: 14px; letter-spacing: 0.5px; border-bottom: 1px solid #e2e8f0; }
+        .table td { padding: 16px 14px; vertical-align: middle; color: #334155; border-bottom: 1px solid #f1f5f9; }
         
         /* Feed & Post System */
-        .news-item { border-bottom: 1px solid #edf2f7; padding: 20px 0; transition: 0.2s; }
+        .news-item { border-bottom: 1px solid #f1f5f9; padding: 22px 0; transition: 0.2s; }
         .news-item:last-child { border-bottom: none; }
-        .news-item:hover { background-color: #fafbfc; padding-left: 5px; }
-        .badge-category { font-size: 10px; font-weight: 700; padding: 5px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .bg-jobs { background: #e3f2fd; color: #0d47a1; }
-        .bg-pension { background: #f3e5f5; color: #4a148c; }
-        .bg-welfare { background: #e8f5e9; color: #1b5e20; }
+        .news-item:hover { background-color: #f8fafc; padding-left: 8px; border-radius: 8px; }
+        .badge-category { font-size: 10px; font-weight: 700; padding: 5px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; }
+        .bg-jobs { background: #e0f2fe; color: #0369a1; }
+        .bg-pension { background: #f3e8ff; color: #6b21a8; }
+        .bg-welfare { background: #dcfce7; color: #166534; }
         
         /* Sidebar Blocks */
-        .sidebar-card { background: white; border-radius: 16px; padding: 20px; margin-bottom: 25px; border: 1px solid #eef2f5; }
-        .quick-link-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px dashed #e2e8f0; color: #4a5568; text-decoration: none; font-size: 14px; }
+        .sidebar-card { background: white; border-radius: 16px; padding: 24px; margin-bottom: 25px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.015); }
+        .quick-link-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #f1f5f9; color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.2s; }
         .quick-link-item:last-child { border-bottom: none; }
-        .quick-link-item:hover { color: var(--army-green); font-weight: 600; }
+        .quick-link-item:hover { color: var(--army-green); padding-left: 4px; font-weight: 600; }
         
         /* Footer Details */
-        footer { background: var(--dark-bg); color: #a0aec0; padding: 60px 0 25px; border-top: 6px solid var(--gold); }
-        footer h6 { color: white; font-weight: 700; text-transform: uppercase; font-size: 14px; margin-bottom: 22px; letter-spacing: 0.5px; }
-        footer a { color: #cbd5e0; text-decoration: none; font-size: 14px; transition: 0.2s; }
-        footer a:hover { color: var(--gold); padding-left: 2px; }
-        .footer-bottom { border-top: 1px solid #2d3748; padding-top: 20px; margin-top: 40px; font-size: 13px; }
+        footer { background: var(--dark-bg); color: #94a3b8; padding: 70px 0 30px; border-top: 5px solid var(--gold); }
+        footer h6 { color: white; font-weight: 700; text-transform: uppercase; font-size: 13px; margin-bottom: 24px; letter-spacing: 0.5px; }
+        footer a { color: #cbd5e1; text-decoration: none; font-size: 14px; transition: 0.2s; }
+        footer a:hover { color: var(--gold); padding-left: 3px; }
+        .footer-bottom { border-top: 1px solid #2d3748; padding-top: 25px; margin-top: 45px; font-size: 13px; }
     </style>
 </head>
 <body>
@@ -77,7 +80,7 @@
 <!-- 1. Top Utility Bar -->
 <div class="top-bar">
     <div class="container d-flex justify-content-between align-items-center">
-        <span><i class="bi bi-clock-history me-2"></i> Last Updated: 17 May 2026</span>
+        <span><i class="bi bi-clock-history me-2 text-warning"></i> Automated Portal Live Desk</span>
         <div id="google_translate_element"></div>
     </div>
 </div>
@@ -177,7 +180,7 @@
             <div class="panel-box border-top border-primary border-4 h-100">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h5 class="fw-bold text-primary mb-0"><i class="bi bi-list-stars me-2"></i>Trending ESM Openings</h5>
-                    <span class="badge bg-danger animate-pulse">Live Table</span>
+                    <span class="badge bg-danger">Live Table</span>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-hover align-middle small">
@@ -262,53 +265,19 @@
         <!-- Detailed Articles / News Flow -->
         <div class="col-lg-8">
             <h4 class="fw-bold mb-4 text-dark border-start border-4 border-success ps-2">Detailed News Explanies & How-To Guides</h4>
-            <div class="bg-white p-4 rounded shadow-sm">
+            <div class="bg-white p-4 rounded shadow-sm border" id="automated-news-container">
                 
-                <!-- Post Item 1 -->
-                <div class="news-item">
-                    <span class="badge-category bg-jobs">Job Guidance</span>
-                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none hover-green">Sarkari Bank Armed Guard Bharti 2026 Process</a></h5>
-                    <p class="small text-muted mb-3">Ex-servicemen reservation quota ke antargat banko me nikalne wali armed security guard bharti ki tayari, physical criteria aur pariksha pattern ki puri jankari yahan dekhein.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-secondary"><i class="bi bi-calendar-event me-1"></i> May 14, 2026</small>
-                        <a href="#" class="btn btn-sm btn-outline-success">Read Full Guide <i class="bi bi-arrow-right"></i></a>
-                    </div>
+                <!-- AUTOMATED INTERNET CONTENT LOADED BY SCRIPT -->
+                <div class="text-center py-4 text-muted" id="news-spinner">
+                    <div class="spinner-border text-success spinner-border-sm me-2" role="status"></div>
+                    Loading automated dynamic updates...
                 </div>
 
-                <!-- Content Middle Ad Inside Content Area -->
-                <div class="ad-placeholder">-- AdSense In-Feed Article Ad Area --</div>
-
-                <!-- Post Item 2 -->
-                <div class="news-item">
-                    <span class="badge-category bg-pension">SPARSH Manual</span>
-                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none">SPARSH Portal LogIn & Profile Verification Step-by-Step</a></h5>
-                    <p class="small text-muted mb-2">Agar aapki pension legacy bank se SPARSH portal par transfer ho chuki hai, toh login karne ke baad identification data aur PPO details correction ki online process samjhein.</p>
-                </div>
-
-                <!-- Post Item 3 -->
-                <div class="news-item">
-                    <span class="badge-category bg-welfare">Medical Benefit</span>
-                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none">ECHS 64KB Smart Card Online Change & Renewal Process</a></h5>
-                    <p class="small text-muted mb-2">Purane temporary slip ya cards ko 2026 ke naye online 64KB updated digital smart card me upgrade karne ke online steps aur required documents checklist.</p>
-                </div>
-                
             </div>
         </div>
 
         <!-- Right Professional Sidebar Area -->
         <div class="col-lg-4">
-            <!-- Sticky Sidebar Card Block -->
-            <div class="sidebar-card shadow-sm border-top border-danger border-4">
-                <h6 class="fw-bold text-danger mb-3"><i class="bi bi-youtube me-2"></i>FaujiFire Video Guide</h6>
-                <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm mb-3">
-                    <iframe src="https://www.youtube.com/embed/live_stream?channel=FJFire" title="FJFire Video Feed" allowfullscreen></iframe>
-                </div>
-                <p class="small text-muted mb-0">SPARSH migration aur ex-servicemen resettlement jankari live dekhne ke liye YouTube channel <strong>@FJFire</strong> ko zaroor subscribe karein.</p>
-            </div>
-
-            <!-- Ad Block Sidebar Positioning Slot -->
-            <div class="ad-placeholder" style="min-height: 250px; display: flex; align-items: center; justify-content: center;">-- AdSense Square / Sidebar Ad Placement --</div>
-
             <!-- Enhanced Directory Quick Resource Panel Links -->
             <div class="sidebar-card shadow-sm border-top border-success border-4">
                 <h6 class="fw-bold text-success mb-3"><i class="bi bi-bookmark-star-fill me-2"></i>Welfare Essential Services</h6>
@@ -319,6 +288,9 @@
                     <a href="#" class="quick-link-item"><i class="bi bi-patch-check me-2 text-info"></i> Digital Life Certificate Status Checker</a>
                 </div>
             </div>
+
+            <!-- Ad Block Sidebar Positioning Slot -->
+            <div class="ad-placeholder" style="min-height: 280px; display: flex; align-items: center; justify-content: center;">-- AdSense Square / Sidebar Ad Placement --</div>
         </div>
     </div>
 </main>
@@ -379,6 +351,67 @@ function googleTranslateElementInit() {
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AUTOMATION FEED ENGINE SCRIPT -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const query = encodeURIComponent("Indian ex-servicemen pension welfare jobs");
+        // Free client-side open-source JSON feed reader proxy
+        const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://news.google.com/rss/search?q=${query}%26hl=hi%26gl=IN%26ceid=IN:hi`;
+
+        fetch(feedUrl)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById("automated-news-container");
+                const spinner = document.getElementById("news-spinner");
+                if(spinner) spinner.remove();
+
+                if (data.status === 'ok' && data.items.length > 0) {
+                    let htmlContent = "";
+                    // Sirf top 4 dynamic trending news dikhane ke liye
+                    data.items.slice(0, 4).forEach((item, index) => {
+                        let categoryBadge = "Welfare Update";
+                        let badgeClass = "bg-welfare";
+                        
+                        if(item.title.toLowerCase().includes("job") || item.title.toLowerCase().includes("bharti")) {
+                            categoryBadge = "Govt Job";
+                            badgeClass = "bg-jobs";
+                        } else if(item.title.toLowerCase().includes("pension") || item.title.toLowerCase().includes("sparsh")) {
+                            categoryBadge = "Pension News";
+                            badgeClass = "bg-pension";
+                        }
+
+                        let pubDate = new Date(item.pubDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+                        htmlContent += `
+                            <div class="news-item">
+                                <span class="badge-category ${badgeClass}">${categoryBadge}</span>
+                                <h5 class="mt-2 fw-bold"><a href="${item.link}" target="_blank" class="text-dark text-decoration-none hover-green">${item.title}</a></h5>
+                                <p class="small text-muted mb-2">Google News network ke mukhya p प्रकाशक se live automation update. Click karke poori official report padhein.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-secondary"><i class="bi bi-calendar-event me-1"></i> ${pubDate} • ${item.author || 'Official Source'}</small>
+                                    <a href="${item.link}" target="_blank" class="btn btn-sm btn-outline-success">Open Source <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        `;
+
+                        // Middle slot mein automatically Ad block space daalne ke liye
+                        if(index === 1) {
+                            htmlContent += `<div class="ad-placeholder">-- AdSense In-Feed Article Ad Area --</div>`;
+                        }
+                    });
+                    container.innerHTML = htmlContent;
+                } else {
+                    container.innerHTML = `<p class="text-center text-muted py-3">Filhal koi naya automation alert nahi mila. Kuch der baad refresh karein.</p>`;
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching feed:", error);
+                const spinner = document.getElementById("news-spinner");
+                if(spinner) spinner.innerHTML = "<span class='text-danger'>Network issue ke kaaran automatic updates load nahi ho paaye.</span>";
+            });
+    });
+</script>
 
 </body>
 </html>
