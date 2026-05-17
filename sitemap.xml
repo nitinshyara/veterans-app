@@ -1,32 +1,141 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Mukhya Home Page -->
-  <url>
-    <loc>https://yourusername.github.io/veterans-app/index.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <priority>1.00</priority>
-  </url>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Website Structure - ESM Help Portal</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- About Us Page -->
-  <url>
-    <loc>https://yourusername.github.io/veterans-app/about.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <priority>0.80</priority>
-  </url>
+    <style>
+        :root { --army-green: #1b5e20; --gold: #ffd700; --dark-bg: #1a1a1a; }
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fc; color: #2d3748; }
+        
+        /* Matching Components from Index/About */
+        .top-bar { background: var(--dark-bg); color: #fff; padding: 8px 0; font-size: 13px; font-weight: 500; }
+        .ticker-wrapper { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 12px 0; }
+        .ticker-title { background: #dc2626; color: white; padding: 5px 14px; font-weight: 700; border-radius: 6px; font-size: 12px; }
+        .navbar { background-color: var(--army-green) !important; border-bottom: 4px solid var(--gold); padding: 15px 0; }
+        
+        /* Matching Hero Style */
+        .hero-section { background: linear-gradient(135deg, rgba(20,70,24,0.96) 0%, rgba(10,45,15,0.93) 100%), url('https://www.transparenttextures.com/patterns/camo.png'); color: white; padding: 60px 0; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; }
+        
+        /* Content Panel */
+        .panel-box { background: white; border-radius: 16px; padding: 40px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.015); margin-top: -40px; }
+        
+        /* Sitemap Specific Styles */
+        .sitemap-section { border-bottom: 1px dashed #e2e8f0; padding-bottom: 20px; margin-bottom: 20px; }
+        .sitemap-section:last-child { border-bottom: none; }
+        .sitemap-link { display: inline-flex; align-items: center; color: #2d3748; text-decoration: none; font-weight: 500; transition: color 0.2s; padding: 6px 0; }
+        .sitemap-link:hover { color: var(--army-green); text-decoration: underline; }
+        .sitemap-link i { color: var(--army-green); font-size: 1.1rem; }
+        
+        footer { background: var(--dark-bg); color: #94a3b8; padding: 70px 0 30px; border-top: 5px solid var(--gold); margin-top: 60px; }
+        .footer-bottom { border-top: 1px solid #2d3748; padding-top: 25px; margin-top: 40px; font-size: 13px; }
+    </style>
+</head>
+<body>
 
-  <!-- Privacy Policy Page -->
-  <url>
-    <loc>https://yourusername.github.io/veterans-app/privacy.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <priority>0.70</priority>
-  </url>
+<div class="top-bar">
+    <div class="container d-flex justify-content-between">
+        <span><i class="bi bi-diagram-3-fill me-2 text-warning"></i> Portal Navigation Directory</span>
+        <div id="google_translate_element"></div>
+    </div>
+</div>
 
-  <!-- Sitemap Page -->
-  <url>
-    <loc>https://yourusername.github.io/veterans-app/sitemap.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <priority>0.50</priority>
-  </url>
+<div class="ticker-wrapper">
+    <div class="container d-flex align-items-center">
+        <span class="ticker-title me-3 text-nowrap">DIRECTORY</span>
+        <marquee class="small fw-semibold text-secondary">ESM Help Portal Map ● Easily find Pension Guides, Welfare Circulars, and Job Vacancies</marquee>
+    </div>
+</div>
 
-</urlset>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fs-3 fw-bold" href="index.html">
+            <i class="bi bi-shield-shaded me-2 text-warning"></i>ESM HELP
+        </a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link text-white fw-semibold" href="index.html"><i class="bi bi-house-door-fill me-1"></i> HOME</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center">
+    <div class="container px-4">
+        <h1 class="display-5 fw-bold mb-2">Portal Sitemap</h1>
+        <p class="lead text-white-50">Explore all sections and links of esmhelp.com in one place</p>
+    </div>
+</header>
+
+<main class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="panel-box">
+                
+                <div class="sitemap-section">
+                    <h5 class="fw-bold text-success mb-3"><i class="bi bi-folder-fill me-2"></i> Important Pages (Main Navigation)</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="index.html" class="sitemap-link"><i class="bi bi-chevron-right me-2"></i> Home Page (मुख्य पृष्ठ)</a><br>
+                            <a href="about.html" class="sitemap-link"><i class="bi bi-chevron-right me-2"></i> About Us (हमारे बारे में)</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="privacy.html" class="sitemap-link"><i class="bi bi-chevron-right me-2"></i> Privacy Policy (गोपनीयता नीति)</a><br>
+                            <a href="sitemap.html" class="sitemap-link text-success fw-bold"><i class="bi bi-chevron-right me-2"></i> Sitemap (साइटमैप)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sitemap-section">
+                    <h5 class="fw-bold text-success mb-3"><i class="bi bi-grid-fill me-2"></i> Core Welfare Resources</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="index.html#pension-guides" class="sitemap-link"><i class="bi bi-hash me-2"></i> SPARSH & Pension Guides</a><br>
+                            <a href="index.html#welfare-circulars" class="sitemap-link"><i class="bi bi-hash me-2"></i> Welfare Schemes & Circulars</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="index.html#esm-jobs" class="sitemap-link"><i class="bi bi-hash me-2"></i> Ex-Servicemen Vacancies & Jobs</a><br>
+                            <a href="index.html#latest-news" class="sitemap-link"><i class="bi bi-hash me-2"></i> Daily Fauji News Updates</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sitemap-section">
+                    <h5 class="fw-bold text-success mb-3"><i class="bi bi-share-fill me-2"></i> Official Channels & Community</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="https://www.youtube.com/@FJFire" target="_blank" class="sitemap-link"><i class="bi bi-youtube me-2 text-danger"></i> FaujiFire YouTube Channel</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="https://wa.me/918901422296" target="_blank" class="sitemap-link"><i class="bi bi-whatsapp me-2 text-success"></i> Official WhatsApp Welfare Support</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container text-center">
+        <h6>ESM HELP PORTAL</h6>
+        <p class="small mb-4">Serving those who served the Nation</p>
+        <div class="footer-bottom text-white-50">
+            &copy; 2026 ESM HELP | Proudly Developed by <strong>FaujiFire Network</strong>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
