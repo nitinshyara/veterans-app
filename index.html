@@ -8,312 +8,370 @@
     <!-- AdSense Code -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1050874559330834" crossorigin="anonymous"></script>
 
-    <!-- Google Fonts & Bootstrap -->
+    <!-- Google Fonts, Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root { --army-green: #1b5e20; --gold: #ffd700; --dark-bg: #121212; }
-        body { font-family: 'Roboto', sans-serif; background-color: #f0f2f5; color: #333; }
+        :root { --army-green: #1b5e20; --gold: #ffd700; --dark-bg: #1a1a1a; --light-gray: #f8f9fa; }
+        body { font-family: 'Inter', sans-serif; background-color: #f4f6f9; color: #333; }
         
-        /* Top Header & Ticker */
-        .top-bar { background: var(--dark-bg); color: white; padding: 5px 0; font-size: 13px; }
-        .ticker { background: var(--gold); color: black; padding: 8px 0; font-weight: bold; overflow: hidden; }
+        /* Top Utility Bar */
+        .top-bar { background: var(--dark-bg); color: #fff; padding: 6px 0; font-size: 13px; }
+        #google_translate_element select { background: #333; color: #fff; border: 1px solid #444; border-radius: 4px; padding: 2px; }
         
-        /* Navbar */
-        .navbar { background-color: var(--army-green) !important; border-bottom: 4px solid var(--gold); }
-        .nav-link { font-weight: 500; text-transform: uppercase; margin-right: 15px; }
+        /* Breaking News Ticker */
+        .ticker-wrapper { background: #fff; border-bottom: 2px solid #e0e0e0; padding: 10px 0; }
+        .ticker-title { background: #d32f2f; color: white; padding: 4px 12px; font-weight: bold; border-radius: 4px; font-size: 13px; }
+        
+        /* Navbar Customization */
+        .navbar { background-color: var(--army-green) !important; border-bottom: 5px solid var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .navbar-brand { font-weight: 700; letter-spacing: 1px; }
+        .nav-link { font-weight: 600; text-transform: uppercase; font-size: 14px; padding: 10px 15px !important; transition: 0.3s; }
+        .nav-link:hover, .nav-item.active .nav-link { color: var(--gold) !important; }
 
-        /* Hero Section */
-        .hero-section { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://www.transparenttextures.com/patterns/camo.png'); background-color: var(--army-green); color: white; padding: 60px 0; }
+        /* Premium Hero Section */
+        .hero-section { background: linear-gradient(135deg, rgba(27,94,32,0.95) 0%, rgba(14,61,20,0.9) 100%), url('https://www.transparenttextures.com/patterns/camo.png'); color: white; padding: 70px 0; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         
-        /* Service Cards */
-        .service-card { background: white; border: none; border-radius: 12px; transition: 0.3s; border-bottom: 4px solid var(--gold); }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .service-icon { font-size: 2.5rem; color: var(--army-green); }
-
-        /* Blog/News Section */
-        .news-item { border-bottom: 1px solid #dee2e6; padding: 15px 0; }
+        /* Quick Action Grid Section */
+        .service-card { background: white; border: none; border-radius: 16px; padding: 25px 20px; transition: 0.3s all ease; text-align: center; border-top: 5px solid var(--army-green); box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); border-top-color: var(--gold); }
+        .service-icon-box { width: 65px; height: 65px; background: #e8f5e9; color: var(--army-green); display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: 0 auto 15px; font-size: 1.8rem; }
+        
+        /* Ad Placement Blocks */
+        .ad-placeholder { background: #eaedf1; border: 2px dashed #bdc6cf; border-radius: 8px; text-align: center; padding: 15px; color: #7f8c8d; font-size: 11px; font-weight: 600; letter-spacing: 1px; margin: 20px 0; text-transform: uppercase; }
+        
+        /* Table Layout Enhancements */
+        .panel-box { background: white; border-radius: 16px; padding: 25px; border: 1px solid #eef2f5; box-shadow: 0 4px 10px rgba(0,0,0,0.01); }
+        .table { margin-bottom: 0; }
+        .table thead { background-color: #f1f3f5; }
+        .table th { font-weight: 600; text-transform: uppercase; font-size: 12px; color: #666; padding: 12px; }
+        .table td { padding: 14px 12px; vertical-align: middle; }
+        
+        /* Feed & Post System */
+        .news-item { border-bottom: 1px solid #edf2f7; padding: 20px 0; transition: 0.2s; }
         .news-item:last-child { border-bottom: none; }
-        .badge-category { font-size: 11px; padding: 4px 8px; border-radius: 4px; background: var(--army-green); color: white; }
-
-        /* Sidebar & Ad Spaces */
-        .sidebar-box { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-        .ad-placeholder { background: #e9ecef; border: 1px dashed #adb5bd; text-align: center; padding: 20px; color: #6c757d; font-size: 12px; margin: 15px 0; }
-
-        /* Footer */
-        footer { background: var(--dark-bg); color: #ccc; padding: 50px 0 20px; }
-        footer h6 { color: white; font-weight: bold; margin-bottom: 20px; }
-        footer a { color: #bbb; text-decoration: none; font-size: 14px; }
-        footer a:hover { color: var(--gold); }
+        .news-item:hover { background-color: #fafbfc; padding-left: 5px; }
+        .badge-category { font-size: 10px; font-weight: 700; padding: 5px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .bg-jobs { background: #e3f2fd; color: #0d47a1; }
+        .bg-pension { background: #f3e5f5; color: #4a148c; }
+        .bg-welfare { background: #e8f5e9; color: #1b5e20; }
+        
+        /* Sidebar Blocks */
+        .sidebar-card { background: white; border-radius: 16px; padding: 20px; margin-bottom: 25px; border: 1px solid #eef2f5; }
+        .quick-link-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px dashed #e2e8f0; color: #4a5568; text-decoration: none; font-size: 14px; }
+        .quick-link-item:last-child { border-bottom: none; }
+        .quick-link-item:hover { color: var(--army-green); font-weight: 600; }
+        
+        /* Footer Details */
+        footer { background: var(--dark-bg); color: #a0aec0; padding: 60px 0 25px; border-top: 6px solid var(--gold); }
+        footer h6 { color: white; font-weight: 700; text-transform: uppercase; font-size: 14px; margin-bottom: 22px; letter-spacing: 0.5px; }
+        footer a { color: #cbd5e0; text-decoration: none; font-size: 14px; transition: 0.2s; }
+        footer a:hover { color: var(--gold); padding-left: 2px; }
+        .footer-bottom { border-top: 1px solid #2d3748; padding-top: 20px; margin-top: 40px; font-size: 13px; }
     </style>
 </head>
 <body>
 
-<!-- 1. Top Bar -->
+<!-- 1. Top Utility Bar -->
 <div class="top-bar">
-    <div class="container d-flex justify-content-between">
-        <span><i class="bi bi-calendar3 me-2"></i> 15 May 2026</span>
+    <div class="container d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-clock-history me-2"></i> Last Updated: 17 May 2026</span>
         <div id="google_translate_element"></div>
     </div>
 </div>
 
 <!-- 2. Breaking News Ticker -->
-<div class="ticker">
-    <div class="container">
-        <marquee behavior="scroll" direction="left">
-            <span class="me-5">LATEST: Bank of Baroda ESM Armed Guard Recruitment 2026</span>
-            <span class="me-5 text-danger">● SPARSH Migration - Last date for DLC submission extended</span>
-            <span>● OROP Arrears Payment Schedule Update</span>
+<div class="ticker-wrapper">
+    <div class="container d-flex align-items-center">
+        <span class="ticker-title me-3 text-nowrap"><i class="bi bi-lightning-fill me-1"></i> BREAKING NEWS</span>
+        <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();" class="small fw-semibold text-secondary">
+            <span class="me-5 text-dark">● Bank of Baroda ESM Armed Guard Online Application Link Active 2026</span>
+            <span class="me-5 text-danger">● SPARSH Alert: Annual Identification / DLC submit karne ki antim tithi badhi</span>
+            <span class="me-5 text-success">● ECHS ne jari kiya naya empanelled hospital locator list map</span>
         </marquee>
     </div>
 </div>
 
-<!-- 3. Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
+<!-- 3. Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-            <span class="fs-3 fw-bold">ESM HELP</span>
+        <a class="navbar-brand d-flex align-items-center fs-3 fw-bold" href="index.html">
+            <i class="bi bi-shield-shaded me-2 text-warning"></i>ESM HELP
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#jobs">Jobs</a></li>
-                <li class="nav-item"><a class="nav-link" href="#pension">Pension</a></li>
-                <li class="nav-item"><a class="nav-link" href="#welfare">Welfare</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="sitemap.html">Sitemap</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="index.html"><i class="bi bi-house-door-fill me-1"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#jobs">Jobs Portal</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#pension">SPARSH Corner</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#welfare">Welfare & ECHS</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="about.html">About Founder</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="sitemap.html">Sitemap</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- 4. Hero Section -->
+<!-- 4. Premium Hero Header -->
 <header class="hero-section text-center">
-    <div class="container">
+    <div class="container px-4">
         <h1 class="display-5 fw-bold mb-3">Serving Those Who Served The Nation</h1>
-        <p class="lead mb-4">ESM Help - Desh ke har Ex-Serviceman ke liye vishwasniya sathi</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="#jobs" class="btn btn-warning px-4 py-2 fw-bold shadow">LATEST JOBS</a>
-            <a href="https://wa.me/918901422296" class="btn btn-light px-4 py-2 fw-bold shadow">WHATSAPP HELP</a>
+        <p class="lead mb-4 text-white-50">Ex-Servicemen, Veer Naris aur Dependents ke liye sabse vishwasniya single-window portal</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="#jobs" class="btn btn-warning btn-lg px-4 py-2 fw-bold shadow-sm"><i class="bi bi-search me-2"></i>FIND LATEST JOBS</a>
+            <a href="https://wa.me/918901422296" target="_blank" class="btn btn-success btn-lg px-4 py-2 fw-bold shadow-sm"><i class="bi bi-whatsapp me-2"></i>JOIN WHATSAPP HELP</a>
         </div>
     </div>
 </header>
-<!-- 4.5 TRENDING JOBS & QUICK UPDATES TABLE SECTION -->
-<div class="container my-4">
-    <div class="row g-4">
-        
-        <!-- Left Column: Latest ESM Jobs Table -->
-        <div class="col-md-6">
-            <div class="bg-white p-4 rounded shadow-sm border-top border-primary border-4 h-100">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="fw-bold text-primary mb-0"><i class="bi bi-briefcase-fill me-2"></i>Latest ESM Jobs</h5>
-                    <span class="badge bg-danger animate-ping">Live Updates</span>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle small">
-                        <thead class="table-light">
-                            <tr>
-                                <th scope="col">Department / Post</th>
-                                <th scope="col">Eligibility</th>
-                                <th scope="col">Last Date</th>
-                                <th scope="col">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Bank of Baroda</strong><br><span class="text-muted">Armed Guard</span></td>
-                                <td><span class="badge bg-secondary">10th + ESM</span></td>
-                                <td class="text-danger fw-bold">25 May 2026</td>
-                                <td><a href="#" class="btn btn-sm btn-primary py-0 px-2">Apply</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Railway Recruitment (RRC)</strong><br><span class="text-muted">Gatekeeper Quota</span></td>
-                                <td><span class="badge bg-secondary">ESM Only</span></td>
-                                <td>10 June 2026</td>
-                                <td><a href="#" class="btn btn-sm btn-primary py-0 px-2">Apply</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>SBI Recruitment 2026</strong><br><span class="text-muted">Security Analyst</span></td>
-                                <td><span class="badge bg-secondary">Graduation + JCO</span></td>
-                                <td>05 June 2026</td>
-                                <td><a href="#" class="btn btn-sm btn-primary py-0 px-2">Apply</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>State Police Dept</strong><br><span class="text-muted">Special Driver Quota</span></td>
-                                <td><span class="badge bg-secondary">10th + Heavy License</span></td>
-                                <td>18 June 2026</td>
-                                <td><a href="#" class="btn btn-sm btn-primary py-0 px-2">Apply</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="text-end mt-2">
-                    <a href="#jobs" class="text-decoration-none small fw-bold text-primary">View All Jobs <i class="bi bi-arrow-right"></i></a>
-                </div>
+
+<!-- 4.5 Core Services Visual Grid -->
+<div class="container" style="margin-top: -30px;">
+    <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-3">
+            <div class="service-card shadow-sm">
+                <div class="service-icon-box"><i class="bi bi-wallet2"></i></div>
+                <h6 class="fw-bold mb-1">SPARSH Portal</h6>
+                <a href="#pension" class="stretched-link small text-decoration-none text-muted">Pension Updates</a>
             </div>
         </div>
-
-        <!-- Right Column: SPARSH & Welfare Circulars Table -->
-        <div class="col-md-6">
-            <div class="bg-white p-4 rounded shadow-sm border-top border-success border-4 h-100">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="fw-bold text-success mb-0"><i class="bi bi-file-earmark-text-fill me-2"></i>SPARSH & Pension Orders</h5>
-                    <span class="badge bg-success">Official</span>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle small">
-                        <thead class="table-light">
-                            <tr>
-                                <th scope="col">Circular / Subject</th>
-                                <th scope="col">Source</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Download</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Circular 665 Update</strong><br><span class="text-muted">OROP Arrears Revision</span></td>
-                                <td><span class="text-uppercase text-muted small">PCDA (P)</span></td>
-                                <td>12 May 2026</td>
-                                <td><a href="#" class="text-danger fs-5"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>DLC Submission Extended</strong><br><span class="text-muted">Life Certificate Notification</span></td>
-                                <td><span class="text-uppercase text-muted small">MoD / SPARSH</span></td>
-                                <td>10 May 2026</td>
-                                <td><a href="#" class="text-danger fs-5"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>ECHS Medical Policy 2026</strong><br><span class="text-muted">New Empanelled Hospitals List</span></td>
-                                <td><span class="text-uppercase text-muted small">Central Org ECHS</span></td>
-                                <td>01 May 2026</td>
-                                <td><a href="#" class="text-danger fs-5"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>CSD Car Booking Rules</strong><br><span class="text-muted">AFD Item Purchase Guide</span></td>
-                                <td><span class="text-uppercase text-muted small">CSD HO</span></td>
-                                <td>28 April 2026</td>
-                                <td><a href="#" class="text-danger fs-5"><i class="bi bi-file-earmark-pdf-fill"></i></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="text-end mt-2">
-                    <a href="#welfare" class="text-decoration-none small fw-bold text-success">View All Circulars <i class="bi bi-arrow-right"></i></a>
-                </div>
+        <div class="col-6 col-md-3">
+            <div class="service-card shadow-sm">
+                <div class="service-icon-box"><i class="bi bi-briefcase"></i></div>
+                <h6 class="fw-bold mb-1">ESM Jobs</h6>
+                <a href="#jobs" class="stretched-link small text-decoration-none text-muted">Quota Vacancies</a>
             </div>
         </div>
-
+        <div class="col-6 col-md-3">
+            <div class="service-card shadow-sm">
+                <div class="service-icon-box"><i class="bi bi-heart-pulse"></i></div>
+                <h6 class="fw-bold mb-1">ECHS Medical</h6>
+                <a href="#welfare" class="stretched-link small text-decoration-none text-muted">Hospital Info</a>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="service-card shadow-sm">
+                <div class="service-icon-box"><i class="bi bi-cart3"></i></div>
+                <h6 class="fw-bold mb-1">CSD Canteen</h6>
+                <a href="#welfare" class="stretched-link small text-decoration-none text-muted">AFD Car Booking</a>
+            </div>
+        </div>
     </div>
 </div>
-<!-- 5. Main Content -->
-<div class="container my-5">
-    <div class="row">
-        <!-- News & Articles Area -->
-        <div class="col-lg-8">
-            <!-- Top Ad -->
-            <div class="ad-placeholder">-- AdSense Horizontal Banner --</div>
 
-            <h4 class="fw-bold border-bottom pb-2 mb-4"><i class="bi bi-newspaper me-2"></i>Recent Post & Job Updates</h4>
-            
+<!-- Header Ad Advertisement Area -->
+<div class="container mt-4">
+    <div class="ad-placeholder">-- Google AdSense Horizontal Leaderboard Top Spot --</div>
+</div>
+
+<!-- 5. Main Grid Content Layout -->
+<main class="container my-5">
+    
+    <!-- Row 1: Quick Action Tables -->
+    <div class="row g-4 mb-5">
+        <!-- Left Table: Latest ESM Jobs -->
+        <div class="col-lg-6" id="jobs">
+            <div class="panel-box border-top border-primary border-4 h-100">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="fw-bold text-primary mb-0"><i class="bi bi-list-stars me-2"></i>Trending ESM Openings</h5>
+                    <span class="badge bg-danger animate-pulse">Live Table</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle small">
+                        <thead>
+                            <tr>
+                                <th>Department & Post</th>
+                                <th>Criteria</th>
+                                <th>Last Date</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Bank of Baroda</strong><br><span class="text-muted small">Armed Guard Recr.</span></td>
+                                <td><span class="badge bg-light text-dark">10th + ESM</span></td>
+                                <td class="text-danger fw-bold">25 May 2026</td>
+                                <td class="text-center"><a href="#" class="btn btn-sm btn-primary py-1 px-3 rounded-pill">Apply</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Railway RRC Quota</strong><br><span class="text-muted small">Level-1 Gatekeeper</span></td>
+                                <td><span class="badge bg-light text-dark">ESM Quota</span></td>
+                                <td class="text-muted">10 June 2026</td>
+                                <td class="text-center"><a href="#" class="btn btn-sm btn-primary py-1 px-3 rounded-pill">Apply</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>SBI Security Dept</strong><br><span class="text-muted small">Security Officer</span></td>
+                                <td><span class="badge bg-light text-dark">JCO / Officer</span></td>
+                                <td class="text-muted">05 June 2026</td>
+                                <td class="text-center"><a href="#" class="btn btn-sm btn-primary py-1 px-3 rounded-pill">Apply</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Table: SPARSH & Pension Circulars -->
+        <div class="col-lg-6" id="pension">
+            <div class="panel-box border-top border-success border-4 h-100">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="fw-bold text-success mb-0"><i class="bi bi-file-earmark-arrow-down-fill me-2"></i>Official Circulars & Orders</h5>
+                    <span class="badge bg-success">PCDA Desk</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle small">
+                        <thead>
+                            <tr>
+                                <th>Subject / Order</th>
+                                <th>Authority</th>
+                                <th>Date</th>
+                                <th class="text-center">File</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Circular 665 Revision</strong><br><span class="text-muted small">OROP Arrears Matrix</span></td>
+                                <td class="text-muted">PCDA (P)</td>
+                                <td class="text-muted">12 May 2026</td>
+                                <td class="text-center"><a href="#" class="text-danger fs-5"><i class="bi bi-file-pdf"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>DLC Timeline Update</strong><br><span class="text-muted small">Annual Identification Info</span></td>
+                                <td class="text-muted">MoD SPARSH</td>
+                                <td class="text-muted">10 May 2026</td>
+                                <td class="text-center"><a href="#" class="text-danger fs-5"><i class="bi bi-file-pdf"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>ECHS New Empanelled</strong><br><span class="text-muted small">Hospital Master List</span></td>
+                                <td class="text-muted">CO ECHS</td>
+                                <td class="text-muted">01 May 2026</td>
+                                <td class="text-center"><a href="#" class="text-danger fs-5"><i class="bi bi-file-pdf"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Blog Feed & Dynamic Sidebar Layout -->
+    <div class="row g-4" id="welfare">
+        <!-- Detailed Articles / News Flow -->
+        <div class="col-lg-8">
+            <h4 class="fw-bold mb-4 text-dark border-start border-4 border-success ps-2">Detailed News Explanies & How-To Guides</h4>
             <div class="bg-white p-4 rounded shadow-sm">
-                <!-- Post 1 -->
+                
+                <!-- Post Item 1 -->
                 <div class="news-item">
-                    <span class="badge-category">GOVT JOBS</span>
-                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none">Sarkari Bank Armed Guard Bharti 2026 for Veterans</a></h5>
-                    <p class="small text-muted mb-2">Ex-servicemen quota ke tehat 500 se zyada Armed Guard ki vacancies nikli hain. Apply karne ki puri vidhi yahan dekhein.</p>
+                    <span class="badge-category bg-jobs">Job Guidance</span>
+                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none hover-green">Sarkari Bank Armed Guard Bharti 2026 Process</a></h5>
+                    <p class="small text-muted mb-3">Ex-servicemen reservation quota ke antargat banko me nikalne wali armed security guard bharti ki tayari, physical criteria aur pariksha pattern ki puri jankari yahan dekhein.</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">May 14, 2026</small>
-                        <a href="#" class="btn btn-sm btn-link text-success p-0">Poora Padhein →</a>
+                        <small class="text-secondary"><i class="bi bi-calendar-event me-1"></i> May 14, 2026</small>
+                        <a href="#" class="btn btn-sm btn-outline-success">Read Full Guide <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Post 2 -->
+                <!-- Content Middle Ad Inside Content Area -->
+                <div class="ad-placeholder">-- AdSense In-Feed Article Ad Area --</div>
+
+                <!-- Post Item 2 -->
                 <div class="news-item">
-                    <span class="badge-category">PENSION</span>
-                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none">SPARSH Portal: Profile Verification Kaise Karein?</a></h5>
-                    <p class="small text-muted mb-2">Agar aapki pension SPARSH par migrate ho gayi hai, toh apna data verify karna zaroori hai. Step-by-step guide.</p>
+                    <span class="badge-category bg-pension">SPARSH Manual</span>
+                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none">SPARSH Portal LogIn & Profile Verification Step-by-Step</a></h5>
+                    <p class="small text-muted mb-2">Agar aapki pension legacy bank se SPARSH portal par transfer ho chuki hai, toh login karne ke baad identification data aur PPO details correction ki online process samjhein.</p>
                 </div>
 
-                <!-- Mid Ad -->
-                <div class="ad-placeholder">-- AdSense In-Feed Ad --</div>
-
-                <!-- Post 3 -->
+                <!-- Post Item 3 -->
                 <div class="news-item">
-                    <span class="badge-category">Welfare</span>
-                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none">ECHS Smart Card Renewal Process 2026</a></h5>
-                    <p class="small text-muted mb-2">Purane smart card ko naye card mein badalne ki online process aur zaroori documents ki list.</p>
+                    <span class="badge-category bg-welfare">Medical Benefit</span>
+                    <h5 class="mt-2 fw-bold"><a href="#" class="text-dark text-decoration-none">ECHS 64KB Smart Card Online Change & Renewal Process</a></h5>
+                    <p class="small text-muted mb-2">Purane temporary slip ya cards ko 2026 ke naye online 64KB updated digital smart card me upgrade karne ke online steps aur required documents checklist.</p>
                 </div>
+                
             </div>
         </div>
 
-        <!-- Sidebar Area -->
+        <!-- Right Professional Sidebar Area -->
         <div class="col-lg-4">
-            <!-- Sidebar Ad -->
-            <div class="ad-placeholder" style="height: 250px;">-- AdSense Square Ad --</div>
+            <!-- Sticky Sidebar Card Block -->
+            <div class="sidebar-card shadow-sm border-top border-danger border-4">
+                <h6 class="fw-bold text-danger mb-3"><i class="bi bi-youtube me-2"></i>FaujiFire Video Guide</h6>
+                <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm mb-3">
+                    <iframe src="https://www.youtube.com/embed/live_stream?channel=FJFire" title="FJFire Video Feed" allowfullscreen></iframe>
+                </div>
+                <p class="small text-muted mb-0">SPARSH migration aur ex-servicemen resettlement jankari live dekhne ke liye YouTube channel <strong>@FJFire</strong> ko zaroor subscribe karein.</p>
+            </div>
 
-            <!-- Important Links Sidebar -->
-            <div class="sidebar-box shadow-sm border-top border-success border-4">
-                <h6 class="fw-bold text-success"><i class="bi bi-link-45deg me-2"></i>Quick Access</h6>
-                <ul class="list-unstyled small mt-3">
-                    <li class="mb-2 p-2 border-bottom"><a href="#" class="text-dark text-decoration-none">● SPARSH Login Portal</a></li>
-                    <li class="mb-2 p-2 border-bottom"><a href="#" class="text-dark text-decoration-none">● Download Corrigendum PPO</a></li>
-                    <li class="mb-2 p-2 border-bottom"><a href="#" class="text-dark text-decoration-none">● CSD AFD Item Booking</a></li>
-                    <li class="mb-2 p-2 border-bottom"><a href="#" class="text-dark text-decoration-none">● DLC Submission Status</a></li>
-                </ul>
+            <!-- Ad Block Sidebar Positioning Slot -->
+            <div class="ad-placeholder" style="min-height: 250px; display: flex; align-items: center; justify-content: center;">-- AdSense Square / Sidebar Ad Placement --</div>
+
+            <!-- Enhanced Directory Quick Resource Panel Links -->
+            <div class="sidebar-card shadow-sm border-top border-success border-4">
+                <h6 class="fw-bold text-success mb-3"><i class="bi bi-bookmark-star-fill me-2"></i>Welfare Essential Services</h6>
+                <div class="d-flex flex-column">
+                    <a href="https://sparsh.defencepension.gov.in/" target="_blank" class="quick-link-item"><i class="bi bi-box-arrow-up-right me-2 text-primary"></i> SPARSH Pensioner Login Portal</a>
+                    <a href="#" class="quick-link-item"><i class="bi bi-download me-2 text-danger"></i> Download Corrigendum PPO Copy</a>
+                    <a href="https://www.csdindia.gov.in/" target="_blank" class="quick-link-item"><i class="bi bi-cart-check me-2 text-success"></i> CSD Online AFD Item Booking</a>
+                    <a href="#" class="quick-link-item"><i class="bi bi-patch-check me-2 text-info"></i> Digital Life Certificate Status Checker</a>
+                </div>
             </div>
         </div>
     </div>
+</main>
+
+<!-- Bottom Full Banner Advertisement Section Ad Slot Block -->
+<div class="container my-4">
+    <div class="ad-placeholder">-- AdSense Horizontal Banner Block Bottom Spot --</div>
 </div>
 
-<!-- 6. Footer -->
+<!-- 6. Corporate Quality Footer Area Section -->
 <footer>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <h6 class="text-warning">ESM HELP PORTAL</h6>
-                <p class="small">Hum desh ke veer ex-servicemen ko unke haq, welfare aur resettlement se judi har jankari ek hi jagah pradan karte hain.</p>
-                <div class="d-flex gap-3 fs-4">
-                    <a href="https://www.youtube.com/@FJFire"><i class="bi bi-youtube"></i></a>
-                    <a href="https://wa.me/918901422296"><i class="bi bi-whatsapp"></i></a>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h6 class="text-warning"><i class="bi bi-shield-check me-2"></i>ESM HELP PORTAL</h6>
+                <p class="small text-white-50">Hum desh ke sammanit ex-servicemen, veernaris aur unke parivaar ko pension, CSD, ECHS aur defence quota vacancies se judi 100% authentic aur satik jankari ek hi platform par dete hain.</p>
+                <div class="d-flex gap-3 fs-4 mt-3">
+                    <a href="https://www.youtube.com/@FJFire" target="_blank" class="text-danger"><i class="bi bi-youtube"></i></a>
+                    <a href="https://wa.me/918901422296" target="_blank" class="text-success"><i class="bi bi-whatsapp"></i></a>
                 </div>
             </div>
-            <div class="col-md-2 mb-4">
-                <h6>PENSION</h6>
-                <ul class="list-unstyled">
-                    <li><a href="#">SPARSH FAQ</a></li>
-                    <li><a href="#">OROP Table</a></li>
-                    <li><a href="#">Life Certificate</a></li>
+            <div class="col-md-2">
+                <h6>PENSION CORNER</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="#">SPARSH FAQs</a></li>
+                    <li class="mb-2"><a href="#">OROP Tables 2026</a></li>
+                    <li class="mb-2"><a href="#">Life Certificate Track</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 mb-4">
-                <h6>RESOURCES</h6>
-                <ul class="list-unstyled">
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="sitemap.html">Sitemap</a></li>
+            <div class="col-md-2">
+                <h6>IMPORTANT INFORMATION</h6>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="about.html">About Us</a></li>
+                    <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+                    <li class="mb-2"><a href="sitemap.html">Sitemap Index</a></li>
                 </ul>
             </div>
-            <div class="col-md-4 mb-4">
-                <h6>CONTACT</h6>
-                <p class="small mb-1"><i class="bi bi-geo-alt me-2"></i> Gandhinagar, Gujarat</p>
-                <p class="small mb-1"><i class="bi bi-envelope me-2"></i> nitinshyara@gmail.com</p>
-                <p class="small"><i class="bi bi-telephone me-2"></i> +91 8901422296</p>
+            <div class="col-md-4">
+                <h6>OFFICIAL CONTACT HELPDESK</h6>
+                <p class="small text-white-50 mb-2"><i class="bi bi-geo-alt-fill me-2 text-warning"></i> Gandhinagar Region, Gujarat, India</p>
+                <p class="small text-white-50 mb-2"><i class="bi bi-envelope-at-fill me-2 text-warning"></i> nitinshyara@gmail.com</p>
+                <p class="small text-white-50"><i class="bi bi-telephone-inbound-fill me-2 text-warning"></i> +91 8901422296 (WhatsApp Only)</p>
             </div>
         </div>
-        <hr class="mt-4" style="border-color: #444;">
-        <div class="text-center small text-muted">
-            &copy; 2026 ESM HELP | Powered by <strong>FaujiFire</strong> | SHYARA NITINKUMAR JINABHAI[cite: 1]
+        
+        <div class="footer-bottom text-center text-white-50">
+            &copy; 2026 ESM HELP | Developed & Managed by <strong>FaujiFire Network</strong> | SHYARA NITINKUMAR JINABHAI<br>
+            <span style="font-size: 11px;" class="text-muted">Disclaimer: Website run purely for informational & welfare support guidance to defense veterans.</span>
         </div>
     </div>
 </footer>
 
-<!-- Translate Scripts -->
+<!-- Google Language Translate Integration Execution Scripts -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
